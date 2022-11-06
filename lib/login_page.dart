@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/register_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -120,23 +121,28 @@ class _LoginPageState extends State<LoginPage> {
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Text("Not a member?",
+                    children: [
+                      const Text("Not a member?",
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           color: Colors.white,
                         ),
                       ),
-                      Text(" Register now!",
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontWeight: FontWeight.bold
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const RegisterPage()
+                          ));
+                        },
+                        child: const Text(" Register now!",
+                          style: TextStyle(
+                              color: Colors.blue,
+                              fontWeight: FontWeight.bold
+                          ),
                         ),
                       ),
                     ],
-                  )
-
-                ]
+                  )]
             ),
           )
       ),
