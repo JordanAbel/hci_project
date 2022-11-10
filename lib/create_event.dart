@@ -16,7 +16,7 @@ class _CreateEvent extends State<CreateEvent> {
   final TextEditingController _controller = TextEditingController();
 
   File? image;
-  String dropDownValue = "Hockey";
+  String dropDownValue = "null";
   String address = "null";
   String autocompletePlace = "null";
 
@@ -115,7 +115,7 @@ class _CreateEvent extends State<CreateEvent> {
                       child: ElevatedButton(
                           onPressed: () => pickImage(),
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.deepPurple,
+                            backgroundColor: Colors.cyan,
                           ),
                           child: Row(
                             children: const [
@@ -135,26 +135,29 @@ class _CreateEvent extends State<CreateEvent> {
 
                   const SizedBox(height: 30),
 
-                  const Text(
-                    "Choose Sport",
-                    style: TextStyle(color: Colors.white, fontSize: 14),
-                  ),
-
-                  const SizedBox(height: 10),
-
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25),
                     child: DropdownButton(
-                      value: dropDownValue,
-                      icon: const Icon(Icons.keyboard_arrow_down),
+                      value: dropDownValue != "null" ? dropDownValue : null,
+                      icon: const Icon(
+                        Icons.keyboard_arrow_down,
+                        color: Colors.white,
+                      ),
                       dropdownColor: Colors.grey[700],
                       style: const TextStyle(color: Colors.white),
                       isExpanded: true,
+                      hint: const Text(
+                        "Select Sport",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
 
                       items: items.map((String items) {
                         return DropdownMenuItem(
                           value: items,
-                          child: Text(items),
+                          child: Text(
+                            items,
+                            style: const TextStyle(fontSize: 16)
+                          ),
                         );
                       }).toList(),
 
@@ -204,7 +207,7 @@ class _CreateEvent extends State<CreateEvent> {
                         },
 
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.deepPurple,
+                          backgroundColor: Colors.cyan,
                         ),
 
                         child: Row(
@@ -233,7 +236,28 @@ class _CreateEvent extends State<CreateEvent> {
                     ) :
                     const SizedBox(height: 0),
 
+                  const SizedBox(height: 30),
 
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 25),
+                    child: Container(
+                      padding: const EdgeInsets.all(20),
+                      decoration: BoxDecoration(
+                        color: Colors.deepPurple,
+                        borderRadius: BorderRadius.circular(12),
+                      ),
+                      child: const Center(
+                        child: Text(
+                          "Create Event",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ]
             ),
           )
