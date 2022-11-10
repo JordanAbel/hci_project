@@ -56,7 +56,29 @@ class _SearchState extends State<Search> {
                 ),
               ],
             )
-        )
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+            backgroundColor: Colors.deepPurple,
+              child: const Icon(Icons.add),
+                ),
+                floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+                  bottomNavigationBar: BottomAppBar(
+                    color: Colors.grey[500],
+                      child: Row(
+                        children: [
+                          IconButton(
+                            onPressed: () {},
+                             icon: const Icon(Icons.search)
+                          ),
+                            const Spacer(),
+                          IconButton(
+                            onPressed: () {},
+                              icon: Icon(Icons.notifications, color: Colors.grey[850],)
+                      ),
+                      ],
+                  ),
+                  ),
     );
   }
 }
