@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_demo/home_screen.dart';
+
 import 'package:flutter_demo/register_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -105,6 +107,7 @@ class _LoginPageState extends State<LoginPage> {
                         color: Colors.deepPurple,
                         borderRadius: BorderRadius.circular(50.0),
                       ),
+
                       child:Center(
                         child:TextButton(
                           style: TextButton.styleFrom(
@@ -115,14 +118,17 @@ class _LoginPageState extends State<LoginPage> {
                           onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
                                 builder: (context) => const Home()
+
                             ));
                           },
                           child: const Text(
                             "Sign In",
                             style: TextStyle(
+
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
+
                           ),
                         ),
                       ),
