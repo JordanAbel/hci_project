@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/create_event.dart';
+
+import 'package:flutter_demo/home_screen.dart';
+
 import 'package:flutter_demo/register_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -100,32 +102,39 @@ class _LoginPageState extends State<LoginPage> {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25),
                     child: Container(
-                      padding: const EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         color: Colors.deepPurple,
-                        borderRadius: BorderRadius.circular(12),
+                        borderRadius: BorderRadius.circular(50.0),
                       ),
-                      child: Center(
-                        child: GestureDetector(
-                          onTap: () {
+
+                      child:Center(
+                        child:TextButton(
+                          style: TextButton.styleFrom(
+                            foregroundColor: Colors.white,
+                            //padding: const EdgeInsets.all(20),
+                            textStyle: const TextStyle(fontSize: 20),
+                          ),
+                          onPressed: () {
                             Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => const CreateEvent()
+                                builder: (context) => const Home()
+
                             ));
                           },
                           child: const Text(
                             "Sign In",
                             style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
+
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+
                           ),
                         ),
                       ),
                     ),
                   ),
-
-                  const SizedBox(height: 25),
+          ),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
