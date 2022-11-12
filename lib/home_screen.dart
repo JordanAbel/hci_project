@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/account.dart';
 
 void main() => runApp(MaterialApp(
   home: Home(),
@@ -88,7 +89,11 @@ class _HomeState extends State<Home> {
             ListTile(
               leading: Icon(Icons.account_circle),
               title: Text('Account'),
-              onTap: () => {},
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const Account()
+                ));
+              },
             ),
             ListTile(
               leading: Icon(Icons.settings),
