@@ -1,73 +1,88 @@
-
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-
 void main() => runApp(const MaterialApp(
-  home: Settings(),
+  home: SettingsPage(),
 ));
 
-class Settings extends StatefulWidget {
-  const Settings({Key? key}) : super(key: key);
+class SettingsPage extends StatefulWidget {
+  const SettingsPage({super.key});
 
   @override
-  State<Settings> createState() => _SettingsState();
+  State<SettingsPage> createState() => _SettingsPage();
 }
 
-class _SettingsState extends State<Settings> {
-  get show => null;
-  bool isSwitched = false;
-  get subtitle => null;
-  get trailing => null;
+class _SettingsPage extends State<SettingsPage> {
+  bool _toggleLocationMode = false;
+  bool _toggleEventNotifications = false;
+  bool _toggleChatNotifications = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.grey[900],
-      appBar: AppBar(
-        leading: const BackButton(
-          color: Colors.white,
+        appBar: AppBar(
+          backgroundColor: Colors.grey[900],
+          title: const Text("Settings"),
+          centerTitle: true,
+            leading: const BackButton(
+              color: Colors.white,
+            ),
         ),
-        backgroundColor: Colors.grey[900],
-        title: const Text("Settings"),
-        centerTitle: true,
-      ),
-      body: SingleChildScrollView(
-        child: Container(
-          constraints: const BoxConstraints.expand(
-            height: 1200,
-          ),
-          child: Column (
-            children:  const <Widget>[
-            Text(
-              "Location",
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.grey,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-
-             Divider(
-              color: Colors.grey,
-              thickness: 1,
-            ),
-            ListTile(
-              leading: Icon (
-                Icons.location_on,
-                color: Colors.deepPurple,
-              ),
-              subtitle: Text (
-                  "Enable Sport Connect to use your location to find nearby events.",
-              style: TextStyle(color: Colors.grey),
-              ),
-
-              trailing: Icon(Icons.view_compact),
-            ),
-            ],
-          ),
-          ),
-    )
+        body: Center(
+            child: Column(
+              children: [
+                SwitchListTile(
+                  title: const Text('Location',
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  secondary: const Icon(Icons.location_on,
+                    color: Colors.deepPurple,
+                  ),
+                  activeColor: Colors.deepPurple,
+                  onChanged: (value) {
+                    setState(() {
+                      _toggleLocationMode = value;
+                    });
+                  },
+                  value: _toggleLocationMode,
+                ),
+                const Divider(
+                  thickness: 1.2,
+                ),
+                SwitchListTile(
+                  title: const Text('Chat Notifications',
+                      style: TextStyle(color: Colors.white),
+                ),
+                  secondary: const Icon(Icons.chat,
+                    color: Colors.deepPurple),
+                  activeColor: Colors.deepPurple,
+                  onChanged: (value) {
+                    setState(() {
+                      _toggleChatNotifications = value;
+                    });
+                  },
+                  value: _toggleChatNotifications,
+                ),
+                const Divider(
+                  thickness: 1.2,
+                ),
+                SwitchListTile(
+                  title: const Text('Event Notifications',
+                  style: TextStyle(color: Colors.white),
+                  ),
+                  secondary: const Icon(Icons.notifications,
+                    color: Colors.deepPurple),
+                  activeColor: Colors.deepPurple,
+                  onChanged: (value) {
+                    setState(() {
+                      _toggleEventNotifications = value;
+                    });
+                  },
+                  value: _toggleEventNotifications,
+                ),
+              ],
+            )) // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
