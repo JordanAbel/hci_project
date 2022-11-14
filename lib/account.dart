@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter_demo/home_screen.dart';
 
 var checkBoxValues=[false, false, false, false, false, false, false, false];
@@ -15,18 +14,18 @@ class _AccountState extends State<Account> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF3F3F3F),
+      backgroundColor: const Color(0xFF3F3F3F),
       appBar: AppBar(
-        backgroundColor: Color(0xFF121212),
+        backgroundColor: const Color(0xFF121212),
         leading: IconButton(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const Home()
               ));
             },
-            icon: Icon(Icons.arrow_back),
+            icon: const Icon(Icons.arrow_back),
           ),
-        actions:<Widget>[
+        actions:const <Widget>[
           Text('@sample_user',
             textAlign: TextAlign.right,
           ),
@@ -36,7 +35,7 @@ class _AccountState extends State<Account> {
         child: Column(
 
           children:<Widget> [
-            Center(
+            const Center(
               child: Padding(
                 padding: EdgeInsets.all(20.0),
                 child: CircleAvatar(
@@ -47,8 +46,8 @@ class _AccountState extends State<Account> {
             ),
             Container(
               alignment: Alignment.centerLeft,
-              padding: EdgeInsets.all(20),
-              child: Text('Favorite Sports',
+              padding: const EdgeInsets.all(20),
+              child: const Text('Favorite Sports',
                 style: TextStyle(
                   fontSize: 23,
                   fontWeight: FontWeight.bold,
@@ -58,8 +57,8 @@ class _AccountState extends State<Account> {
               ),
             ),
             CheckboxListTile(
-              title: Text(
-                "Snow boarding",
+              title: const Text(
+                "Snowboarding",
                 style: TextStyle(
                   color: Colors.white,
 
@@ -71,11 +70,11 @@ class _AccountState extends State<Account> {
                   checkBoxValues[0]= val!;
                 });
               },
-              side: BorderSide(color: Colors.white),
+              side: const BorderSide(color: Colors.white),
 
             ),
             CheckboxListTile(
-              title: Text(
+              title: const Text(
                 "Basketball",
                 style: TextStyle(
                   color: Colors.white,
@@ -88,11 +87,11 @@ class _AccountState extends State<Account> {
                   checkBoxValues[1]= val!;
                 });
               },
-              side: BorderSide(color: Colors.white),
+              side: const BorderSide(color: Colors.white),
 
             ),
             CheckboxListTile(
-              title: Text(
+              title: const Text(
                 "Volleyball",
                 style: TextStyle(
                   color: Colors.white,
@@ -105,11 +104,11 @@ class _AccountState extends State<Account> {
                   checkBoxValues[2]= val!;
                 });
               },
-              side: BorderSide(color: Colors.white),
+              side: const BorderSide(color: Colors.white),
 
             ),
             CheckboxListTile(
-              title: Text(
+              title: const Text(
                 "Swimming",
                 style: TextStyle(
                   color: Colors.white,
@@ -122,12 +121,12 @@ class _AccountState extends State<Account> {
                   checkBoxValues[3]= val!;
                 });
               },
-              side: BorderSide(color: Colors.white),
+              side: const BorderSide(color: Colors.white),
 
             ),
             CheckboxListTile(
-              title: Text(
-                "football",
+              title: const Text(
+                "Football",
                 style: TextStyle(
                   color: Colors.white,
 
@@ -139,11 +138,11 @@ class _AccountState extends State<Account> {
                   checkBoxValues[4]= val!;
                 });
               },
-              side: BorderSide(color: Colors.white),
+              side: const BorderSide(color: Colors.white),
 
             ),
             CheckboxListTile(
-              title: Text(
+              title: const Text(
                 "Soccer",
                 style: TextStyle(
                   color: Colors.white,
@@ -156,11 +155,11 @@ class _AccountState extends State<Account> {
                   checkBoxValues[5]= val!;
                 });
               },
-              side: BorderSide(color: Colors.white),
+              side: const BorderSide(color: Colors.white),
 
             ),
             CheckboxListTile(
-              title: Text(
+              title: const Text(
                 "Table Tennis",
                 style: TextStyle(
                   color: Colors.white,
@@ -173,11 +172,11 @@ class _AccountState extends State<Account> {
                   checkBoxValues[6]= val!;
                 });
               },
-              side: BorderSide(color: Colors.white),
+              side: const BorderSide(color: Colors.white),
 
             ),
             CheckboxListTile(
-              title: Text(
+              title: const Text(
                 "Golf",
                 style: TextStyle(
                   color: Colors.white,
@@ -190,7 +189,7 @@ class _AccountState extends State<Account> {
                   checkBoxValues[7]= val!;
                 });
               },
-              side: BorderSide(color: Colors.white),
+              side: const BorderSide(color: Colors.white),
 
             ),
           ],
