@@ -19,7 +19,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF121212),
+      backgroundColor: Colors.grey,
       appBar: AppBar(
           backgroundColor: Color(0xFF121212),
           /*leading: IconButton(
@@ -123,7 +123,7 @@ class _HomeState extends State<Home> {
         child: Column(
           children: [
             Card(
-              //color: Colors.white24,
+              color: Color(0xFF121212),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10)
               ),
@@ -134,10 +134,15 @@ class _HomeState extends State<Home> {
                     leading:CircleAvatar(
                       backgroundImage: AssetImage('assets/pp10.jpeg'),
                     ),
-                    title: Text("Drop-in Basketball"),
+                    title: Text("Drop-in Basketball",
+                      style: TextStyle(
+                        color: Colors.white
+                      ),
+                    ),
                     subtitle: Text("Some friends and I will be on the courts between 5 and 7pm. Feel free to join us!",
                       style: TextStyle(
-                          fontWeight: FontWeight.w600
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white
                       ),
                     ),
                   ),
@@ -146,16 +151,27 @@ class _HomeState extends State<Home> {
                     padding: EdgeInsets.symmetric(vertical: 15, horizontal: 80),
                     child:Row(
                       children: [
-                        Icon(Icons.access_time,
-                          size: 10,
+                        Icon(Icons.access_time_filled,
+                          size: 20,
+                          color: Colors.deepPurple,
                         ),
-                        Text('17:00-19:00'),
+                        Text('17:00-19:00',
+                          style: TextStyle(
+                            color: Colors.white
+                          ),
+                        ),
 
                         Container(
                           padding: EdgeInsets.symmetric(vertical:0, horizontal:10),
                         ),
-                        Icon(Icons.location_on),
-                        Flexible(child: Text('111 Mcgill Rd., Kamloops B.C')),
+                        Icon(Icons.location_on,
+                        color: Colors.deepPurple,
+                        ),
+                        Flexible(child: Text('111 Mcgill Rd., Kamloops B.C',
+                        style: TextStyle(
+                          color: Colors.white
+                        ),
+                        )),
                       ],
                     ) ,
                   ),
@@ -164,7 +180,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             Card(
-              //color: Colors.white24,
+              color: Color(0xFF121212),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)
               ),
@@ -175,10 +191,15 @@ class _HomeState extends State<Home> {
                     leading:CircleAvatar(
                       backgroundImage: AssetImage('assets/pp1.jpg'),
                     ),
-                    title: Text("Snow Boarding"),
+                    title: Text("Snow Boarding",
+                      style: TextStyle(
+                          color: Colors.white
+                      ),
+                    ),
                     subtitle: Text("Anyone up for an afternoon of snowboarding? Come join us!",
                     style: TextStyle(
-                      fontWeight: FontWeight.w600
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white
                     ),
                     ),
                   ),
@@ -187,16 +208,28 @@ class _HomeState extends State<Home> {
                     padding: EdgeInsets.symmetric(vertical: 15, horizontal: 80),
                     child:Row(
                       children: [
-                        Icon(Icons.access_time,
-                          size: 10,
+                        Icon(Icons.access_time_filled,
+                          size: 20,
+                          color: Colors.deepPurple,
                         ),
-                        Text('12:00-15:00'),
+                        Text('12:00-15:00',
+                          style: TextStyle(
+                              color: Colors.white
+                          ),
+                        ),
 
                         Container(
                           padding: EdgeInsets.symmetric(vertical:0, horizontal:10),
                         ),
-                        Icon(Icons.location_on),
-                        Flexible(child: Text('Sun Peaks Resort')),
+                        Icon(Icons.location_on,
+                          color: Colors.deepPurple,
+
+                        ),
+                        Flexible(child: Text('Sun Peaks Resort',
+                          style: TextStyle(
+                              color: Colors.white
+                          ),
+                        )),
                       ],
                     ) ,
                   ),
@@ -205,7 +238,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             Card(
-              //color: Colors.white24,
+              color: Color(0xFF121212),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)
               ),
@@ -216,10 +249,15 @@ class _HomeState extends State<Home> {
                     leading:CircleAvatar(
                       backgroundImage: AssetImage('assets/pp2.jpg'),
                     ),
-                    title: Text("Six-aside Soccer"),
+                    title: Text("Six-aside Soccer",
+                      style: TextStyle(
+                          color: Colors.white
+                      ),
+                    ),
                     subtitle: Text("Join us for soccer. We are looking for 4 more players",
                       style: TextStyle(
-                          fontWeight: FontWeight.w600
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white
                       ),
 
                     ),
@@ -229,16 +267,27 @@ class _HomeState extends State<Home> {
                     padding: EdgeInsets.symmetric(vertical: 15, horizontal: 80),
                     child:Row(
                       children: [
-                        Icon(Icons.access_time,
-                          size: 10,
+                        Icon(Icons.access_time_filled,
+                          size: 20,
+                          color: Colors.deepPurple,
                         ),
-                        Text('17:00-18:30'),
+                        Text('17:00-18:30',
+                          style: TextStyle(
+                              color: Colors.white
+                          ),
+                        ),
 
                         Container(
                           padding: EdgeInsets.symmetric(vertical:0, horizontal:10),
                         ),
-                        Icon(Icons.location_on),
-                        Flexible(child: Text('HillSide Stadium')),
+                        Icon(Icons.location_on,
+                          color: Colors.deepPurple,
+                        ),
+                        Flexible(child: Text('HillSide Stadium',
+                          style: TextStyle(
+                              color: Colors.white
+                          ),
+                        )),
                       ],
                     ) ,
                   ),
@@ -247,7 +296,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             Card(
-              //color: Colors.white24,
+              color: Color(0xFF121212),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)
               ),
@@ -258,10 +307,15 @@ class _HomeState extends State<Home> {
                     leading:CircleAvatar(
                       backgroundImage: AssetImage('assets/pp3.jpg'),
                     ),
-                    title: Text("I need a Tennis Partner"),
+                    title: Text("I need a Tennis Partner",
+                      style: TextStyle(
+                          color: Colors.white
+                      ),
+                    ),
                     subtitle: Text("I'm looking for a tennis partner. I'm learning so either a learner or someone willing to teach me would be great!",
                       style: TextStyle(
-                          fontWeight: FontWeight.w600
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white
                       ),
 
                     ),
@@ -271,16 +325,27 @@ class _HomeState extends State<Home> {
                     padding: EdgeInsets.symmetric(vertical: 15, horizontal: 80),
                     child:Row(
                       children: [
-                        Icon(Icons.access_time,
-                          size: 10,
+                        Icon(Icons.access_time_filled,
+                          size: 20,
+                          color: Colors.deepPurple,
                         ),
-                        Text('9:00-10:30'),
+                        Text('9:00-10:30',
+                          style: TextStyle(
+                              color: Colors.white
+                          ),
+                        ),
 
                         Container(
                           padding: EdgeInsets.symmetric(vertical:0, horizontal:10),
                         ),
-                        Icon(Icons.location_on),
-                        Flexible(child: Text('Riverside Park')),
+                        Icon(Icons.location_on,
+                          color: Colors.deepPurple,
+                        ),
+                        Flexible(child: Text('Riverside Park',
+                            style: TextStyle(
+                            color: Colors.white
+                        ),
+                        )),
                       ],
                     ) ,
                   ),
@@ -289,7 +354,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             Card(
-              //color: Colors.white24,
+              color: Color(0xFF121212),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)
               ),
@@ -300,10 +365,15 @@ class _HomeState extends State<Home> {
                     leading:CircleAvatar(
                       backgroundImage: AssetImage('assets/pp4.jpeg'),
                     ),
-                    title: Text("Table Tennis"),
+                    title: Text("Table Tennis",
+                      style: TextStyle(
+                          color: Colors.white
+                      ),
+                    ),
                     subtitle: Text(" We meet at the TCC every Sunday morning; always looking for new players.",
                       style: TextStyle(
-                          fontWeight: FontWeight.w600
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white
                       ),
                     ),
                   ),
@@ -312,16 +382,27 @@ class _HomeState extends State<Home> {
                     padding: EdgeInsets.symmetric(vertical: 15, horizontal: 80),
                     child:Row(
                       children: [
-                        Icon(Icons.access_time,
-                          size: 10,
+                        Icon(Icons.access_time_filled,
+                          size: 20,
+                          color: Colors.deepPurple,
                         ),
-                        Text('9:00-12:00'),
+                        Text('9:00-12:00',
+                          style: TextStyle(
+                              color: Colors.white
+                          ),
+                        ),
 
                         Container(
                           padding: EdgeInsets.symmetric(vertical:0, horizontal:10),
                         ),
-                        Icon(Icons.location_on),
-                        Flexible(child: Text('TCC')),
+                        Icon(Icons.location_on,
+                          color: Colors.deepPurple,
+                        ),
+                        Flexible(child: Text('TCC',
+                          style: TextStyle(
+                              color: Colors.white
+                          ),
+                        )),
                       ],
                     ) ,
                   ),
@@ -330,7 +411,7 @@ class _HomeState extends State<Home> {
               ),
             ),
             Card(
-              //color: Colors.white24,
+              color: Color(0xFF121212),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)
               ),
@@ -341,10 +422,15 @@ class _HomeState extends State<Home> {
                     leading:CircleAvatar(
                       backgroundImage: AssetImage('assets/pp5.jpg'),
                     ),
-                    title: Text("Early Bird Swimming"),
+                    title: Text("Early Bird Swimming",
+                      style: TextStyle(
+                          color: Colors.white
+                      ),
+                    ),
                     subtitle: Text("Early Birds out there can join us for an intense swim at 5:30am every day at Westsyde Pool. Great way to start the day! We all get breakfast at Tim Hortons afterwards.",
                       style: TextStyle(
-                          fontWeight: FontWeight.w600
+                          fontWeight: FontWeight.w500,
+                          color: Colors.white
                       ),
                     ),
                   ),
@@ -353,16 +439,27 @@ class _HomeState extends State<Home> {
                     padding: EdgeInsets.symmetric(vertical: 15, horizontal: 80),
                     child:Row(
                       children: [
-                        Icon(Icons.access_time,
-                          size: 10,
+                        Icon(Icons.access_time_filled,
+                          size: 20,
+                          color: Colors.deepPurple,
                         ),
-                        Text('5:30-6:30'),
+                        Text('5:30-6:30',
+                          style: TextStyle(
+                              color: Colors.white
+                          ),
+                        ),
 
                         Container(
                           padding: EdgeInsets.symmetric(vertical:0, horizontal:10),
                         ),
-                        Icon(Icons.location_on),
-                        Flexible(child: Text('Westsyde Pool')),
+                        Icon(Icons.location_on,
+                          color: Colors.deepPurple,
+                        ),
+                        Flexible(child: Text('Westsyde Pool',
+                          style: TextStyle(
+                              color: Colors.white
+                          ),
+                        )),
                       ],
                     ) ,
                   ),
