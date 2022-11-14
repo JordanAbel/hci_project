@@ -28,7 +28,7 @@ class _RegisterPage extends State<RegisterPage> {
               fontSize: 30,
             ),
           ),
-          const SizedBox(height: 50),
+          const SizedBox(height: 30),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
             child: Container(
@@ -129,37 +129,37 @@ class _RegisterPage extends State<RegisterPage> {
               ),
             ),
           ),
-          const SizedBox(height: 10),
+
+          const SizedBox(height: 30),
+
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 25),
-            child: Container(
-              padding: const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: Colors.deepPurple,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Center(
-                child:TextButton(
-                  style: TextButton.styleFrom(
-                    foregroundColor: Colors.white,
-                    //padding: const EdgeInsets.all(20),
-                    textStyle: const TextStyle(fontSize: 20),
-                  ),
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => const Home()
-                    ));
-                  },
-                  child: const Text(
-                  "Create Account",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 20,
+            child: GestureDetector(
+              child: Container(
+                height: 60,
+                padding: const EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                  color: Colors.deepPurple,
+                  borderRadius: BorderRadius.circular(50.0),
+                ),
+
+
+                child: const Center(
+                  child: Text(
+                    "Create Account",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
                   ),
                 ),
-                ),
               ),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const Home()
+                ));
+              },
             ),
           ),
         ]),

@@ -20,25 +20,13 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          /*leading: IconButton(
-            onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const Menu()
-              ));
-            },
-            icon: Icon(Icons.menu),
-          ),
-           */
-        // actions:const <Widget>[
-        //   Text('@sample_user',
-        //     textAlign: TextAlign.end,
-        //   ),
-        // ],
-        title: const Text(
+        title: const Padding(
+          padding: EdgeInsets.only(left: 200),
+          child: Text(
             "@sample_user",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.white, fontSize: 16.0),
+          ),
         ),
-        centerTitle: false,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
