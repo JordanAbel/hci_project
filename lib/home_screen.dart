@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/account.dart';
-import 'package:flutter_demo/create_event.dart';
-import 'package:flutter_demo/drawer.dart';
-import 'package:flutter_demo/search_screen.dart';
 
-void main() => runApp(const MaterialApp(
+import 'package:flutter/material.dart';
+import 'package:flutter_demo/account.dart';
+import 'package:flutter_demo/friends.dart';
+
+void main() => runApp(MaterialApp(
   home: Home(),
 ));
 
@@ -20,37 +20,37 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Padding(
-          padding: EdgeInsets.only(left: 200),
-          child: Text(
-            "@sample_user",
-            style: TextStyle(color: Colors.white, fontSize: 16.0),
+          backgroundColor: Color(0xFF121212),
+          /*leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const Menu()
+              ));
+            },
+            icon: Icon(Icons.menu),
           ),
-        ),
+           */
+        actions:<Widget>[
+          Text('@sample_user',
+          textAlign: TextAlign.end,
+          ),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => const CreateEvent()
-          ));
-        },
+        onPressed: () {},
         backgroundColor: Colors.deepPurple,
-        child: const Icon(Icons.add),
+        child: Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        color: const Color(0xFFB4B3B3),
+        color: Color(0xFFB4B3B3),
         child: Row(
           children: [
             IconButton(
-                onPressed: () {
-                  Navigator.of(context).push(MaterialPageRoute(
-                      builder: (context) => const Search()
-                  ));
-                },
-                icon: const Icon(Icons.search)
+                onPressed: () {},
+                icon: Icon(Icons.search)
             ),
-            const Spacer(),
+            Spacer(),
             IconButton(
                 onPressed: () {},
                 icon: Icon(Icons.notifications, color: Colors.grey[850],)
@@ -58,7 +58,66 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-      drawer: const DrawerMenu(),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color(0xFF3F3F3F),
+              ),
+              child: Column(
+                children:<Widget> [
+                  Align(
+                    alignment: Alignment.topLeft,
+                    child: CircleAvatar(
+                      backgroundImage: AssetImage('assets/pp1.jpg'),
+                      radius: 50,
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      '@sample_user',
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.account_circle),
+              title: Text('Account'),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const Account()
+                ));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+              onTap: () => {},
+            ),
+            ListTile(
+              leading: Icon(Icons.people),
+              title: Text('Friends'),
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const Friends()
+                ));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.message),
+              title: Text('Messages'),
+              onTap: () => {},
+            ),
+          ],
+        ),
+      ),
     );
 
   }
