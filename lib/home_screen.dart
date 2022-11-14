@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/account.dart';
 import 'package:flutter_demo/create_event.dart';
 import 'package:flutter_demo/drawer.dart';
+import 'package:flutter_demo/search_screen.dart';
 
 void main() => runApp(const MaterialApp(
   home: Home(),
@@ -19,7 +20,6 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: const Color(0xFF121212),
           /*leading: IconButton(
             onPressed: () {
               Navigator.of(context).push(MaterialPageRoute(
@@ -29,11 +29,16 @@ class _HomeState extends State<Home> {
             icon: Icon(Icons.menu),
           ),
            */
-        actions:const <Widget>[
-          Text('@sample_user',
-          textAlign: TextAlign.end,
-          ),
-        ],
+        // actions:const <Widget>[
+        //   Text('@sample_user',
+        //     textAlign: TextAlign.end,
+        //   ),
+        // ],
+        title: const Text(
+            "@sample_user",
+            style: TextStyle(color: Colors.white),
+        ),
+        centerTitle: false,
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -50,7 +55,11 @@ class _HomeState extends State<Home> {
         child: Row(
           children: [
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const Search()
+                  ));
+                },
                 icon: const Icon(Icons.search)
             ),
             const Spacer(),
@@ -61,7 +70,7 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-      drawer: const DrawerMenu()
+      drawer: const DrawerMenu(),
     );
 
   }

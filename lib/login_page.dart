@@ -101,40 +101,36 @@ class _LoginPageState extends State<LoginPage> {
 
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25),
-                    child: Container(
-                      padding: const EdgeInsets.all(5),
-                      decoration: BoxDecoration(
-                        color: Colors.deepPurple,
-                        borderRadius: BorderRadius.circular(50.0),
-                      ),
+                    child: GestureDetector(
+                      child: Container(
+                        height: 60,
+                        padding: const EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          color: Colors.deepPurple,
+                          borderRadius: BorderRadius.circular(50.0),
+                        ),
 
-                      child:Center(
-                        child:TextButton(
-                          style: TextButton.styleFrom(
-                            foregroundColor: Colors.white,
-                            //padding: const EdgeInsets.all(20),
-                            textStyle: const TextStyle(fontSize: 20),
-                          ),
-                          onPressed: () {
-                            Navigator.of(context).push(MaterialPageRoute(
-                                builder: (context) => const Home()
 
-                            ));
-                          },
-                          child: const Text(
+                        child: const Center(
+                          child: Text(
                             "Sign In",
                             style: TextStyle(
-
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
-
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
                           ),
                         ),
                       ),
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const Home()
+                        ));
+                      },
                     ),
                   ),
-          ),
+
+                  const SizedBox(height: 10),
 
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,

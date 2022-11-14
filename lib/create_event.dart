@@ -85,7 +85,7 @@ class _CreateEvent extends State<CreateEvent> {
                     ),
                   ),
 
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 20),
 
                   image != null ?
                     Image.file(
@@ -237,40 +237,42 @@ class _CreateEvent extends State<CreateEvent> {
                     ) :
                     const SizedBox(height: 0),
 
-                  const SizedBox(height: 30),
+                  const SizedBox(height: 20),
 
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 25),
-                    child: Container(
-                      padding: const EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        color: Colors.deepPurple,
-                        borderRadius: BorderRadius.circular(12),
-                      ),
+                    child: GestureDetector(
+                      child: Container(
+                        height: 60,
+                        padding: const EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                          color: Colors.deepPurple,
+                          borderRadius: BorderRadius.circular(12.0),
+                        ),
 
-                      child: Center(
-                        child: TextButton(onPressed: () {
-                          Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => const Home()
-                            ));
-                          },
 
-                          child: const Text(
-                          "Create Event",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 20,
+                        child: const Center(
+                          child: Text(
+                            "Create Event",
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                            ),
                           ),
                         ),
-                      )
+                      ),
+                      onTap: () {
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const Home()
+                        ));
+                      },
                     ),
                   ),
-                ),
-              ]
-            ),
-          )
-      ),
+                ]
+              ),
+            )
+          ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         backgroundColor: Colors.deepPurple,
