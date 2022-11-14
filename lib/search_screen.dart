@@ -19,9 +19,12 @@ class _SearchState extends State<Search> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-//grey bar top of screen and grey background with search icon
+        //grey bar top of screen and grey background with search icon
         backgroundColor: Colors.grey[900],
         appBar: AppBar(
+          leading: const BackButton(
+            color: Colors.white,
+          ),
           backgroundColor: Colors.deepPurple,
           title: const Text("Search for event"),
           centerTitle: true,
