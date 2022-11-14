@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/account.dart';
+import 'package:flutter_demo/create_event.dart';
+import 'package:flutter_demo/drawer.dart';
+import 'package:flutter_demo/search_screen.dart';
 
-import 'package:flutter/material.dart';
-
-void main() => runApp(MaterialApp(
+void main() => runApp(const MaterialApp(
   home: Home(),
 ));
 
 class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
+  const Home({super.key});
 
   @override
   State<Home> createState() => _HomeState();
@@ -18,32 +20,37 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Color(0xFF121212),
-          leading: IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.menu),
+        title: const Padding(
+          padding: EdgeInsets.only(left: 200),
+          child: Text(
+            "@sample_user",
+            style: TextStyle(color: Colors.white, fontSize: 16.0),
           ),
-        actions:<Widget>[
-          Text('@sample_user',
-          textAlign: TextAlign.end,
-          ),
-        ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => const CreateEvent()
+          ));
+        },
         backgroundColor: Colors.deepPurple,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        color: Color(0xFFB4B3B3),
+        color: const Color(0xFFB4B3B3),
         child: Row(
           children: [
             IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.search)
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const Search()
+                  ));
+                },
+                icon: const Icon(Icons.search)
             ),
-            Spacer(),
+            const Spacer(),
             IconButton(
                 onPressed: () {},
                 icon: Icon(Icons.notifications, color: Colors.grey[850],)
@@ -51,6 +58,7 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
+      drawer: const DrawerMenu(),
     );
 
   }
