@@ -15,9 +15,9 @@ class Settings extends StatefulWidget {
 
 class _SettingsState extends State<Settings> {
   get show => null;
-  bool isSwitched = false;
   get subtitle => null;
   get trailing => null;
+  bool isSwitched = false;
 
   @override
   Widget build(BuildContext context) {
