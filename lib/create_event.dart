@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_demo/home_screen.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:map_location_picker/map_location_picker.dart';
 
@@ -246,8 +247,15 @@ class _CreateEvent extends State<CreateEvent> {
                         color: Colors.deepPurple,
                         borderRadius: BorderRadius.circular(12),
                       ),
-                      child: const Center(
-                        child: Text(
+
+                      child: Center(
+                        child: TextButton(onPressed: () {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const Home()
+                            ));
+                          },
+
+                          child: const Text(
                           "Create Event",
                           style: TextStyle(
                             color: Colors.white,
@@ -255,10 +263,11 @@ class _CreateEvent extends State<CreateEvent> {
                             fontSize: 20,
                           ),
                         ),
-                      ),
+                      )
                     ),
                   ),
-                ]
+                ),
+              ]
             ),
           )
       ),
