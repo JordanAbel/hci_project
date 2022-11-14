@@ -82,7 +82,8 @@ class _SettingsPage extends State<SettingsPage> {
                   value: _toggleEventNotifications,
                 ),
               ],
-            )) // This trailing comma makes auto-formatting nicer for build methods.
+            ),
+        ),
     );
   }
 }
