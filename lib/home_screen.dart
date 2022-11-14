@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_demo/create_event.dart';
+import 'package:flutter_demo/drawer.dart';
+import 'package:flutter_demo/search_screen.dart';
 
-import 'package:flutter/material.dart';
-import 'package:flutter_demo/account.dart';
-import 'package:flutter_demo/friends.dart';
-
-void main() => runApp(MaterialApp(
+void main() => runApp(const MaterialApp(
   home: Home(),
 ));
 
@@ -21,37 +20,37 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Colors.grey,
       appBar: AppBar(
-          backgroundColor: Color(0xFF121212),
-          /*leading: IconButton(
-            onPressed: () {
-              Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const Menu()
-              ));
-            },
-            icon: Icon(Icons.menu),
+      title: const Padding(
+        padding: EdgeInsets.only(left: 200),
+          child: Text(
+            "@sample_user",
+            style: TextStyle(color: Colors.white, fontSize: 16.0),
           ),
-           */
-        actions:<Widget>[
-          Text('@sample_user',
-          textAlign: TextAlign.end,
-          ),
-        ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.of(context).push(MaterialPageRoute(
+              builder: (context) => const CreateEvent()
+          ));
+        },
         backgroundColor: Colors.deepPurple,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
-        color: Color(0xFFB4B3B3),
+        color: const Color(0xFFB4B3B3),
         child: Row(
           children: [
             IconButton(
-                onPressed: () {},
-                icon: Icon(Icons.search)
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => const Search()
+                  ));
+                },
+                icon: const Icon(Icons.search)
             ),
-            Spacer(),
+            const Spacer(),
             IconButton(
                 onPressed: () {},
                 icon: Icon(Icons.notifications, color: Colors.grey[850],)
@@ -59,66 +58,7 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Color(0xFF3F3F3F),
-              ),
-              child: Column(
-                children:<Widget> [
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: CircleAvatar(
-                      backgroundImage: AssetImage('assets/pp1.jpg'),
-                      radius: 50,
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      '@sample_user',
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.account_circle),
-              title: Text('Account'),
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const Account()
-                ));
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-              onTap: () => {},
-            ),
-            ListTile(
-              leading: Icon(Icons.people),
-              title: Text('Friends'),
-              onTap: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                    builder: (context) => const Friends()
-                ));
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.message),
-              title: Text('Messages'),
-              onTap: () => {},
-            ),
-          ],
-        ),
-      ),
+      drawer: const DrawerMenu(),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -130,7 +70,7 @@ class _HomeState extends State<Home> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  ListTile(
+                  const ListTile(
                     leading:CircleAvatar(
                       backgroundImage: AssetImage('assets/pp10.jpeg'),
                     ),
@@ -148,26 +88,26 @@ class _HomeState extends State<Home> {
                   ),
 
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 80),
+                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 80),
                     child:Row(
                       children: [
-                        Icon(Icons.access_time_filled,
+                        const Icon(Icons.access_time_filled,
                           size: 20,
                           color: Colors.deepPurple,
                         ),
-                        Text('17:00-19:00',
+                        const Text('17:00-19:00',
                           style: TextStyle(
                             color: Colors.white
                           ),
                         ),
 
                         Container(
-                          padding: EdgeInsets.symmetric(vertical:0, horizontal:10),
+                          padding: const EdgeInsets.symmetric(vertical:0, horizontal:10),
                         ),
-                        Icon(Icons.location_on,
-                        color: Colors.deepPurple,
+                        const Icon(Icons.location_on,
+                          color: Colors.deepPurple,
                         ),
-                        Flexible(child: Text('111 Mcgill Rd., Kamloops B.C',
+                        const Flexible(child: Text('111 Mcgill Rd., Kamloops B.C',
                         style: TextStyle(
                           color: Colors.white
                         ),
@@ -187,7 +127,7 @@ class _HomeState extends State<Home> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  ListTile(
+                  const ListTile(
                     leading:CircleAvatar(
                       backgroundImage: AssetImage('assets/pp1.jpg'),
                     ),
@@ -205,27 +145,27 @@ class _HomeState extends State<Home> {
                   ),
 
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 80),
+                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 80),
                     child:Row(
                       children: [
-                        Icon(Icons.access_time_filled,
+                        const Icon(Icons.access_time_filled,
                           size: 20,
                           color: Colors.deepPurple,
                         ),
-                        Text('12:00-15:00',
+                        const Text('12:00-15:00',
                           style: TextStyle(
                               color: Colors.white
                           ),
                         ),
 
                         Container(
-                          padding: EdgeInsets.symmetric(vertical:0, horizontal:10),
+                          padding: const EdgeInsets.symmetric(vertical:0, horizontal:10),
                         ),
-                        Icon(Icons.location_on,
+                        const Icon(Icons.location_on,
                           color: Colors.deepPurple,
 
                         ),
-                        Flexible(child: Text('Sun Peaks Resort',
+                        const Flexible(child: Text('Sun Peaks Resort',
                           style: TextStyle(
                               color: Colors.white
                           ),
@@ -245,7 +185,7 @@ class _HomeState extends State<Home> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  ListTile(
+                  const ListTile(
                     leading:CircleAvatar(
                       backgroundImage: AssetImage('assets/pp2.jpg'),
                     ),
@@ -264,7 +204,7 @@ class _HomeState extends State<Home> {
                   ),
 
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 80),
+                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 80),
                     child:Row(
                       children: [
                         Icon(Icons.access_time_filled,
@@ -278,7 +218,7 @@ class _HomeState extends State<Home> {
                         ),
 
                         Container(
-                          padding: EdgeInsets.symmetric(vertical:0, horizontal:10),
+                          padding: const EdgeInsets.symmetric(vertical:0, horizontal:10),
                         ),
                         Icon(Icons.location_on,
                           color: Colors.deepPurple,
@@ -303,7 +243,7 @@ class _HomeState extends State<Home> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  ListTile(
+                  const ListTile(
                     leading:CircleAvatar(
                       backgroundImage: AssetImage('assets/pp3.jpg'),
                     ),
@@ -322,7 +262,7 @@ class _HomeState extends State<Home> {
                   ),
 
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 80),
+                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 80),
                     child:Row(
                       children: [
                         Icon(Icons.access_time_filled,
@@ -336,7 +276,7 @@ class _HomeState extends State<Home> {
                         ),
 
                         Container(
-                          padding: EdgeInsets.symmetric(vertical:0, horizontal:10),
+                          padding: const EdgeInsets.symmetric(vertical:0, horizontal:10),
                         ),
                         Icon(Icons.location_on,
                           color: Colors.deepPurple,
@@ -361,7 +301,7 @@ class _HomeState extends State<Home> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  ListTile(
+                  const ListTile(
                     leading:CircleAvatar(
                       backgroundImage: AssetImage('assets/pp4.jpeg'),
                     ),
@@ -379,7 +319,7 @@ class _HomeState extends State<Home> {
                   ),
 
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 80),
+                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 80),
                     child:Row(
                       children: [
                         Icon(Icons.access_time_filled,
@@ -393,7 +333,7 @@ class _HomeState extends State<Home> {
                         ),
 
                         Container(
-                          padding: EdgeInsets.symmetric(vertical:0, horizontal:10),
+                          padding: const EdgeInsets.symmetric(vertical:0, horizontal:10),
                         ),
                         Icon(Icons.location_on,
                           color: Colors.deepPurple,
@@ -418,7 +358,7 @@ class _HomeState extends State<Home> {
               child: Column(
                 mainAxisSize: MainAxisSize.max,
                 children: [
-                  ListTile(
+                  const ListTile(
                     leading:CircleAvatar(
                       backgroundImage: AssetImage('assets/pp5.jpg'),
                     ),
@@ -436,7 +376,7 @@ class _HomeState extends State<Home> {
                   ),
 
                   Container(
-                    padding: EdgeInsets.symmetric(vertical: 15, horizontal: 80),
+                    padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 80),
                     child:Row(
                       children: [
                         Icon(Icons.access_time_filled,
@@ -450,7 +390,7 @@ class _HomeState extends State<Home> {
                         ),
 
                         Container(
-                          padding: EdgeInsets.symmetric(vertical:0, horizontal:10),
+                          padding: const EdgeInsets.symmetric(vertical:0, horizontal:10),
                         ),
                         Icon(Icons.location_on,
                           color: Colors.deepPurple,
