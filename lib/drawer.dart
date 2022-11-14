@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/account.dart';
+import 'package:flutter_demo/settings_page.dart';
 
 class DrawerMenu extends StatefulWidget {
   const DrawerMenu({super.key});
@@ -52,7 +53,11 @@ class _DrawerMenu extends State<DrawerMenu> {
             ListTile(
               leading: Icon(Icons.settings),
               title: Text('Settings'),
-              onTap: () => {},
+              onTap: () => {
+                Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const Settings()
+                ))
+              },
             ),
             ListTile(
               leading: Icon(Icons.people),

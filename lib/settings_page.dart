@@ -32,41 +32,44 @@ class _SettingsState extends State<Settings> {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        child: Container(
-          constraints: const BoxConstraints.expand(
-            height: 1200,
-          ),
-          child: Column (
-            children:  const <Widget>[
-            Text(
-              "Location",
-              textAlign: TextAlign.center,
-              style: TextStyle(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 15),
+          child: Container(
+            constraints: const BoxConstraints.expand(
+              height: 1200,
+            ),
+            child: Column (
+              children:  const <Widget>[
+              Text(
+                "Location",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  color: Colors.grey,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+               Divider(
                 color: Colors.grey,
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+                thickness: 1,
               ),
-            ),
+              ListTile(
+                leading: Icon (
+                  Icons.location_on,
+                  color: Colors.deepPurple,
+                ),
+                subtitle: Text (
+                    "Enable Sport Connect to use your location to find nearby events.",
+                style: TextStyle(color: Colors.grey),
+                ),
 
-             Divider(
-              color: Colors.grey,
-              thickness: 1,
-            ),
-            ListTile(
-              leading: Icon (
-                Icons.location_on,
-                color: Colors.deepPurple,
+                trailing: Icon(Icons.view_compact),
               ),
-              subtitle: Text (
-                  "Enable Sport Connect to use your location to find nearby events.",
-              style: TextStyle(color: Colors.grey),
-              ),
-
-              trailing: Icon(Icons.view_compact),
+              ],
             ),
-            ],
-          ),
-          ),
+            ),
+        ),
     )
     );
   }
