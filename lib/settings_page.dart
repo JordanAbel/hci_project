@@ -19,14 +19,14 @@ class _SettingsPage extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[900],
+        backgroundColor: Colors.grey[900],
         appBar: AppBar(
           backgroundColor: Colors.grey[900],
           title: const Text("Settings"),
           centerTitle: true,
-            leading: const BackButton(
-              color: Colors.white,
-            ),
+          leading: const BackButton(
+            color: Colors.white,
+          ),
         ),
         body: Center(
             child: Column(
@@ -51,10 +51,10 @@ class _SettingsPage extends State<SettingsPage> {
                 ),
                 SwitchListTile(
                   title: const Text('Chat Notifications',
-                      style: TextStyle(color: Colors.white),
-                ),
+                    style: TextStyle(color: Colors.white),
+                  ),
                   secondary: const Icon(Icons.chat,
-                    color: Colors.deepPurple),
+                      color: Colors.deepPurple),
                   activeColor: Colors.deepPurple,
                   onChanged: (value) {
                     setState(() {
@@ -68,10 +68,10 @@ class _SettingsPage extends State<SettingsPage> {
                 ),
                 SwitchListTile(
                   title: const Text('Event Notifications',
-                  style: TextStyle(color: Colors.white),
+                    style: TextStyle(color: Colors.white),
                   ),
                   secondary: const Icon(Icons.notifications,
-                    color: Colors.deepPurple),
+                      color: Colors.deepPurple),
                   activeColor: Colors.deepPurple,
                   onChanged: (value) {
                     setState(() {
