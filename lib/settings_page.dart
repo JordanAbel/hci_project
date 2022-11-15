@@ -15,9 +15,9 @@ class Settings extends StatefulWidget {
 
 class _SettingsState extends State<Settings> {
   get show => null;
-  bool isSwitched = false;
   get subtitle => null;
   get trailing => null;
+  bool isSwitched = false;
 
   @override
   Widget build(BuildContext context) {
@@ -32,44 +32,41 @@ class _SettingsState extends State<Settings> {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 15),
-          child: Container(
-            constraints: const BoxConstraints.expand(
-              height: 1200,
-            ),
-            child: Column (
-              children:  const <Widget>[
-              Text(
-                "Location",
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.grey,
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-
-               Divider(
+        child: Container(
+          constraints: const BoxConstraints.expand(
+            height: 1200,
+          ),
+          child: Column (
+            children:  const <Widget>[
+            Text(
+              "Location",
+              textAlign: TextAlign.center,
+              style: TextStyle(
                 color: Colors.grey,
-                thickness: 1,
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
               ),
-              ListTile(
-                leading: Icon (
-                  Icons.location_on,
-                  color: Colors.deepPurple,
-                ),
-                subtitle: Text (
-                    "Enable Sport Connect to use your location to find nearby events.",
-                style: TextStyle(color: Colors.grey),
-                ),
+            ),
 
-                trailing: Icon(Icons.view_compact),
+             Divider(
+              color: Colors.grey,
+              thickness: 1,
+            ),
+            ListTile(
+              leading: Icon (
+                Icons.location_on,
+                color: Colors.deepPurple,
               ),
-              ],
+              subtitle: Text (
+                  "Enable Sport Connect to use your location to find nearby events.",
+              style: TextStyle(color: Colors.grey),
+              ),
+
+              trailing: Icon(Icons.view_compact),
             ),
-            ),
-        ),
+            ],
+          ),
+          ),
     )
     );
   }
