@@ -20,6 +20,8 @@ class _CreateEvent extends State<CreateEvent> {
   String dropDownValue = "null";
   String address = "null";
   String autocompletePlace = "null";
+  double _value = 0;
+  String _status = 'Beginner';
 
   var items = [
     'Hockey',
@@ -168,6 +170,41 @@ class _CreateEvent extends State<CreateEvent> {
                         });
                       },
                     ),
+                  ),
+
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Slider(
+                        min: 0.0,
+                        max: 100.0,
+                        value: _value,
+                        divisions: 2,
+                        onChanged: (value) {
+                          setState(() {
+                            _value = value;
+                          });
+                        },
+                        onChangeEnd: (value) {
+                          setState(() {
+                            if (value == 0) {
+                              _status = 'Beginner';
+                            } else if (value == 50) {
+                              _status = 'Intermediate';
+                            } else {
+                              _status = 'Advanced';
+                            }
+                          });
+                        },
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 25),
+                        child: Text(
+                          'Skill Level: $_status',
+                          style: const TextStyle(color: Colors.white, fontSize: 16),
+                        ),
+                      ),
+                    ],
                   ),
 
                   const SizedBox(height: 30),
