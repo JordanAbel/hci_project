@@ -56,7 +56,7 @@ class _DrawerMenu extends State<DrawerMenu> {
             title: const Text('Settings'),
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const Settings()
+                  builder: (context) => const SettingsPage()
               ));
             },
           ),
